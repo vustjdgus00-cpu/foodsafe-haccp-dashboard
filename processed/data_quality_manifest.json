@@ -1,0 +1,123 @@
+{
+  "pipeline_version": "1.0.0",
+  "source_files": [
+    {
+      "dataset": "food_haccp",
+      "filename": "20260914_114125.csv",
+      "size_bytes": 6214370,
+      "sha256": "d0e76ada6bcb6a2804befb5e06806051696a996708cea343cfe9aa6c02afcd40"
+    },
+    {
+      "dataset": "livestock_haccp",
+      "filename": "20260916_100445.csv",
+      "size_bytes": 2468232,
+      "sha256": "a3c163e50eb810b2f635a09f9762dcb18476ed7364761879cad45582387c2d64"
+    },
+    {
+      "dataset": "administrative",
+      "filename": "식품검사 부적합 이력 + 개선 시정조치, 후속관리.csv",
+      "size_bytes": 1821908,
+      "sha256": "8730f76f3245a295f2b1ca01002ccc40616b5782258d0d8f4302f944eff441c5"
+    },
+    {
+      "dataset": "nonconforming",
+      "filename": "20260914_044911.csv",
+      "size_bytes": 131359,
+      "sha256": "ecfd4756de81f27712182cf7c153440c5570bff6f37ea2689dd5ce9dda7e3ff2"
+    },
+    {
+      "dataset": "recalls",
+      "filename": "20260914_045015.csv",
+      "size_bytes": 171781,
+      "sha256": "5d902c0b9ebce50d12723d8dccc649dc55bdd33c5a22632b534928a4698c74f9"
+    },
+    {
+      "dataset": "geocoded",
+      "filename": "20260918_044135.csv",
+      "size_bytes": 1068556,
+      "sha256": "dab1447b3e32c1e1f7408e40b7d0885dd236b45ffc9b739e8441c8fe1e31afda"
+    }
+  ],
+  "rule": "Raw files are not modified. Prepared files trim text, remove exact duplicate rows, standardize dates and derive address-based regions. No risk score or prediction label is created.",
+  "join_rule": "priority_check_candidates uses LCNS_NO and a many-to-one join to one food-HACCP entity per licence.",
+  "linkage_rule": "record_linkage_audit uses LCNS_NO exact matches only. Business names and addresses are not used as automatic join keys.",
+  "quality": [
+    {
+      "dataset": "food_haccp",
+      "raw_rows": 39306,
+      "prepared_rows": 39306,
+      "removed_exact_duplicates": 0,
+      "raw_exact_duplicates": 0,
+      "key": "HACCP_APPN_NO",
+      "key_unique_non_null": 35652,
+      "key_non_null_rows": 39306,
+      "valid_date_rows": 39306,
+      "address_non_null_rows": 39303
+    },
+    {
+      "dataset": "livestock_haccp",
+      "raw_rows": 18025,
+      "prepared_rows": 17815,
+      "removed_exact_duplicates": 210,
+      "raw_exact_duplicates": 210,
+      "key": "HACCP_APPN_NO",
+      "key_unique_non_null": 17141,
+      "key_non_null_rows": 17815,
+      "valid_date_rows": 17815,
+      "address_non_null_rows": 17812
+    },
+    {
+      "dataset": "administrative",
+      "raw_rows": 5409,
+      "prepared_rows": 5409,
+      "removed_exact_duplicates": 0,
+      "raw_exact_duplicates": 0,
+      "key": "DSPSDTLS_SEQ",
+      "key_unique_non_null": 5409,
+      "key_non_null_rows": 5409,
+      "valid_date_rows": 5409,
+      "address_non_null_rows": 5407
+    },
+    {
+      "dataset": "nonconforming",
+      "raw_rows": 579,
+      "prepared_rows": 577,
+      "removed_exact_duplicates": 2,
+      "raw_exact_duplicates": 2,
+      "key": "RTRVLDSUSE_SEQ",
+      "key_unique_non_null": 485,
+      "key_non_null_rows": 577,
+      "valid_date_rows": 577,
+      "address_non_null_rows": 573
+    },
+    {
+      "dataset": "recalls",
+      "raw_rows": 374,
+      "prepared_rows": 374,
+      "removed_exact_duplicates": 0,
+      "raw_exact_duplicates": 0,
+      "key": "RTRVLDSUSE_SEQ",
+      "key_unique_non_null": 374,
+      "key_non_null_rows": 374,
+      "valid_date_rows": 374,
+      "address_non_null_rows": 371
+    },
+    {
+      "dataset": "geocoded",
+      "raw_rows": 4200,
+      "prepared_rows": 4200,
+      "removed_exact_duplicates": 0,
+      "raw_exact_duplicates": 0,
+      "key": "appointno",
+      "key_unique_non_null": 4200,
+      "key_non_null_rows": 4200
+    }
+  ],
+  "priority_candidate_rows": 69,
+  "priority_candidate_unique_dispositions": 69,
+  "priority_candidate_unique_licences": 67,
+  "lifecycle_reference_date": "2026-09-14",
+  "lifecycle_certifications": 52793,
+  "inspection_recall_linked_events": 40,
+  "geocoded_haccp_exact_matches": 3755
+}

@@ -1,0 +1,7 @@
+﻿dataset,raw_rows,prepared_rows,removed_exact_duplicates,key,key_unique_non_null,source_file,processed_file,connection_policy
+food_haccp,39306,39306,0,HACCP_APPN_NO,35652,20260914_114125.csv,food_haccp_prepared.csv,LCNS_NO / HACCP_APPN_NO exact key
+livestock_haccp,18025,17815,210,HACCP_APPN_NO,17141,20260916_100445.csv,livestock_haccp_prepared.csv,LCNS_NO / HACCP_APPN_NO exact key
+administrative,5409,5409,0,DSPSDTLS_SEQ,5409,"식품검사 부적합 이력 + 개선 시정조치, 후속관리.csv",administrative_prepared.csv,LCNS_NO exact match only
+nonconforming,579,577,2,RTRVLDSUSE_SEQ,485,20260914_044911.csv,nonconforming_prepared.csv,RTRVLDSUSE_SEQ; LCNS_NO when present
+recalls,374,374,0,RTRVLDSUSE_SEQ,374,20260914_045015.csv,recalls_prepared.csv,RTRVLDSUSE_SEQ; LCNS_NO when present
+geocoded,4200,4200,0,appointno,4200,20260918_044135.csv,geocoded_prepared.csv,appointno = HACCP_APPN_NO exact match

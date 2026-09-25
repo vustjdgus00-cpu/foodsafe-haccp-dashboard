@@ -1,0 +1,4 @@
+﻿dataset,prepared_rows,licence_present_rows,unique_licences,rows_exactly_linked_to_food_haccp,rows_exactly_linked_to_any_haccp,rule
+administrative,5409,5409,5367,69,125,LCNS_NO exact match only
+nonconforming,577,134,105,17,54,LCNS_NO exact match only
+recalls,374,295,234,76,94,LCNS_NO exact match only
